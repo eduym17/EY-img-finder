@@ -4,6 +4,7 @@ html {
 
 html * {
   box-sizing: inherit;
+  font-family: 'Poppins', sans-serif;
 }
 
 header {
