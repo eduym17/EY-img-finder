@@ -33,6 +33,11 @@ const App = () => {
         </Formik>
       </header>
       <div className='container'>
+        <div className='query'>
+          {photos.length === 0
+          ? 'Make a query!'
+          : `'${search}' query has ${photos.length} results:`}
+        </div>
         <div className={`${photos.length === 0 ? 'center-empty': 'center'}`} >
           {photos.map(photo =>
           <article key={photo.id} onClick={() => open(photo.links.html)}>
