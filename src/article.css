@@ -2,7 +2,7 @@ article {
   display: inline-block;
   width: 370px;
   transition: box-shadow 0.2s ease;
-  margin: 40px 10px 0 10px;
+  margin: 20px 10px 10px 10px;
   background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
