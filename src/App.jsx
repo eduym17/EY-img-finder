@@ -6,7 +6,8 @@ import './article.css';
 
 const App = () => {
   const [photos, setPhotos] = useState([])
-  console.log({ photos });
+  const [search, setSearch] = useState()
+  // console.log({ photos });
   const open = url => window.open(url)
   return (
     <div className='body'>
@@ -20,17 +21,19 @@ const App = () => {
               }
             })
             const data = await response.json()
+            console.log(data)
             setPhotos(data.results)
+            setSearch(values.search)
           }}
         >
           <Form className='form'>
-            <p>☄️ Search for pictures below:</p>
+            <p>☄️ Getting images from Unsplash API</p>
             <Field name='search' placeholder="Search here" />
           </Form>
         </Formik>
       </header>
       <div className='container'>
-        <div className='center'>
+        <div className={`${photos.length === 0 ? 'center-empty': 'center'}`} >
           {photos.map(photo =>
           <article key={photo.id} onClick={() => open(photo.links.html)}>
             <img src={photo.urls.regular} />
